@@ -14,7 +14,9 @@ module.exports = function(grunt) {
 			},
 			libs: {
 				src: [
+					'src/js/lib/jquery.min.js',
 					'src/js/lib/angular.min.js',
+					'src/js/lib/bootstrap.min.js',
 					'src/js/lib/*.js'
 				],
 				dest: 'dist/js/libraries.packed.js'
