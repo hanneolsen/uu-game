@@ -1,0 +1,32 @@
+<div class="jumbotron">
+	<h1>Velkommen!</h1>
+	<p>Du er ett steg unna UU-lekens begynnelse! Dens formål er å demonstrere bad practices (etterfulgt av eksempler på good practice).</p>
+	<p><button class="btn btn-primary btn-lg" ng-click="personalia()" role="button">Begynn!</button></p>
+</div>
+
+
+<div ng-if="showPersonalia">
+	<p>
+		Før vi kan begynne trenger jeg litt info om deg!
+	</p>
+	<form>
+		<div class="form-group">
+			<label for="player-name">Navn</label>
+			<input type="text" focus-me="true" ng-model="player.name" class="form-control" id="player-name" placeholder="Hva heter du?">
+		</div>
+		 <div class="radio">
+			<label>
+				<input type="radio" name="cake" ng-model="player.pref"  id="cake1" ng-value="true" checked>
+				Jeg liker kake.
+			</label>
+		</div>
+		<div class="radio">
+			<label>
+				<input type="radio" name="cake" ng-model="player.pref"  id="cake2" value="false">
+				Jeg liker aldeles IKKE kake.
+			</label>
+		</div>
+	  <button type="submit" class="btn btn-default" ng-disabled="!player.name || !player.pref" ng-click="nextLevel()">Start!</button>
+	</form>
+
+</div>

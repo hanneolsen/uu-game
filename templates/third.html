@@ -1,0 +1,88 @@
+<div ng-if="smallerDescription" class="level-description">
+	Utfordring #1, tastaturfella
+</div>
+<div class="vertical-spacing-large" ng-if="showJumbotron">
+	<div class="jumbotron">
+		<h1>
+			Utfordring #1, tastaturfella
+		</h1>
+		<p>
+			En tastaturfelle oppstår når en bruker som navigerer med tastaturet ikke enkelt får flyttet fokus fra et element med bruk av kun tastaturet. 
+		</p>
+
+		<p>
+			En tastaturfelle kan også bety at man ikke kan navigere seg videre på siden, f.eks. hvis navigering til neste steg trigges når et klikk-event skjer på elementet. (Kanskje et mer vanlig scenario.)
+		</p>
+
+
+		<p>
+			<button class="btn btn-primary btn-lg" ng-click="showKeyboardTrap1()">Got it!</button>
+		</p>
+		<!-- 
+			- Hvis man f.eks har en popup som åpnes med keydown på et element
+			- Hvis man f.eks ikke får navigert seg videre pga
+	-->
+	</div>
+</div>
+
+<div ng-if="keyboardTrap1">
+	<h2>En knapp for en knapp</h2>
+	<p>
+		En knapp burde se ut som og oppføre seg som en knapp, sant?
+	</p>
+
+	<p>
+		<span class="btn btn-default top-spacing-small" focus-me="true" ng-click="awesome()" tabindex="0">Shortcut to world domination</span>
+	</p>
+
+	<p>
+		(Spoiler: Nei, ikke denne gangen. Det er en span som lytter på et klikk-event, alas.)
+
+	</p>
+
+	<p>
+		<span class="btn btn-default top-spacing-small" ng-click="awesome()">Shortcut to cake.</span>
+	</p>
+
+	<p>
+		Uten å eksplisitt sette tabindex="0" på dette span-elementet kan ikke tastatur-brukere normalt komme seg til det i det hele tatt. Tabindex settes automatisk på elementer som input, button og a. No cake for you!
+	</p>
+
+	<button class="btn btn-default" ng-click="showNextExample()">Neste</button>
+</div>
+
+<div ng-if="keyboardTrap2">
+	<h2>Hva med noe mer irriterende?</h2>
+
+	<p>
+		Hvis man har valgt en sorteringsmekanisme for en liste, er det vel naturlig at fokus endres tilbake til søkeresultatet, også for tastaturbrukere?
+	</p>
+	<ul id="result" tabindex="0" focus-me="true">
+		<li ng-repeat="user in level.exampleUsers | orderBy: (level.sort || '') && 'navn'">
+			{{user.navn}}
+		</li>
+	</ul>
+	
+	<div class="checkbox well">
+	    <label>
+	      <input type="checkbox" ng-keydown="shiftFocus($event)" ng-model="level.sort"> Sorter resultatet alfabetisk
+	    </label>
+	</div>
+
+	<h2>Sluttvis</h2>
+	<p>
+		Måtte du tabbe baklengs i dokumentet for å komme deg hit? Ikke heeelt awesome akkurat.
+	</p>
+	<button class="btn btn-default" ng-click="showSummary()">Joa, ser poenget..</button>
+  </div>
+</div>
+
+<div ng-if="summary">
+	<h2>Summa summarum</h2>
+
+	<p>
+		Litt irriterende, vil jeg tro? Det kan enkelt unngås i hverdagskodingen ved å simpelthen tabbe seg gjennom egne løsninger en gang i blant! :)
+	</p>
+
+	<button class="btn btn-default" ng-click="nextLevel()">Neste nivå</button>
+</div>

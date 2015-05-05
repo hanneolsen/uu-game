@@ -1,0 +1,38 @@
+<div class="vertical-spacing-large">
+	<div class="jumbotron">
+		<h1>
+			Supert {{player.name}}!
+		</h1>
+		<p>
+			Som sagt er dette en demonstrasjon av bad practices når det kommer til UU. For å virkelig vise hvor frustrerende det kan oppleves, må vi etablere noen spilleregler.
+		</p>
+	</div>
+</div>
+
+<h3>Museklikk ikke tillatt</h3>
+<p>
+	Dette betyr at du som bruker må finne andre måter å komme deg frem på. Hver eneste gang et museklikk blir registrert, rykker du tilbake til start på det nåværende nivået. 
+</p>
+
+<h3>Navigering med tastatur</h3>
+<p>
+	De første nivåene vil det være nok å navigere seg rundt ved hjelp av tastaturet. <strong>Ved å bruke tab</strong> vil du kunne navigere deg mellom elementer "man kan gjøre noe med", typisk lenker og skjemaelementer. 
+</p>
+
+
+<h3>Voiceover tillatt</h3>
+<p>
+	Er du på mac? You're in luck! Med OSX får du nemlig tilgang til utmerkede verktøy som vi gjerne vil du skal bruke. Trykk Command-F5 for å aktivere VoiceOver. Som sagt er ikke dette nødvendig på de enkleste nivåene, men hvis man skal 
+</p>
+
+<p class="top-spacing-large">
+	Null stress, sant?
+</p>
+
+<div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="level.chill"> Null stress!
+    </label>
+  </div>
+
+<button class="btn btn-large btn-default vertical-spacing-medium" ng-disabled="!level.chill" ng-click="nextLevel()">Onwards!</button>

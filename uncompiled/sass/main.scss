@@ -1,0 +1,60 @@
+@import "bootstrap.scss";
+
+
+vertical-spacing-mini {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.top-spacing-mini {
+	margin-top: 5px;
+}
+
+.bottom-spacing-mini {
+	margin-bottom: 5px;
+}
+
+.vertical-spacing-small {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.top-spacing-small {
+	margin-top: 10px;
+}
+
+.bottom-spacing-small {
+	margin-bottom: 10px;
+}
+
+.vertical-spacing-medium {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.top-spacing-medium {
+	margin-top: 20px;
+}
+
+.bottom-spacing-medium {
+	margin-bottom: 20px;
+}
+
+.vertical-spacing-large {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.top-spacing-large {
+	margin-top: 30px;
+}
+
+.bottom-spacing-large {
+	margin-bottom: 30px;
+}
+
+.level-description {
+	text-transform: uppercase;
+	color: $gray-light;
+	font-size: 0.9em;
+}
