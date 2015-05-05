@@ -7,22 +7,22 @@ module.exports = function(grunt) {
 			},
 			app: {
 				src: [
-					'uncompiled/js/game/module.js',
-					'uncompiled/js/game/*.js'
+					'src/js/game/module.js',
+					'src/js/game/*.js'
 				],
-				dest: 'compiled/js/game.packed.js'
+				dest: 'dist/js/game.packed.js'
 			},
 			libs: {
 				src: [
-					'uncompiled/js/lib/angular.min.js',
-					'uncompiled/js/lib/*.js'
+					'src/js/lib/angular.min.js',
+					'src/js/lib/*.js'
 				],
-				dest: 'compiled/js/libraries.packed.js'
+				dest: 'dist/js/libraries.packed.js'
 			}
 		},
 		jshint: {
 			files: [
-				'uncompiled/js/**/*.js'
+				'src/js/**/*.js'
 			],
 			options: {
 				// options here to override JSHint defaults
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 		},
 		dist: {
 			files: {
-				'compiled/css/main.css': 'uncompiled/sass/main.scss'
+				'dist/css/main.css': 'src/sass/main.scss'
 			}
 		}
 	},
@@ -50,15 +50,15 @@ module.exports = function(grunt) {
 			livereload: true
 		},
 		styles: {
-			files: ['uncompiled/sass/**/*.scss'],
+			files: ['src/sass/**/*.scss'],
 			tasks: ['sass']
 		},
 		images: {
-			files: ['uncompiled/images/**/*'],
+			files: ['src/images/**/*'],
 			tasks: ['sass']
 		},
 		scripts: {
-			files: ['uncompiled/js/**/*.js'],
+			files: ['src/js/**/*.js'],
 			tasks: ['concat']
 		}
 	},
