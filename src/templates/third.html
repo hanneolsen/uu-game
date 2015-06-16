@@ -18,63 +18,43 @@
 		<p>
 			<button class="btn btn-primary btn-lg" ng-click="showKeyboardTrap1()">Got it!</button>
 		</p>
-		<!-- 
-			- Hvis man f.eks har en popup som åpnes med keydown på et element
-			- Hvis man f.eks ikke får navigert seg videre pga
-	-->
 	</div>
 </div>
 
-<div ng-if="keyboardTrap1">
-	<h2>En knapp for en knapp</h2>
+<div ng-if="!keyboardTrap1">
+	<h2>Hent nøkkelen</h2>
 	<p>
-		En knapp burde se ut som og oppføre seg som en knapp, sant?
+		Alt du trenger å gjøre for å komme deg videre til neste nivå er å hente nøkkelen vi har gjemt!
 	</p>
 
 	<p>
-		<span class="btn btn-default top-spacing-small" focus-me="true" ng-click="awesome()" tabindex="0">Shortcut to world domination</span>
+		<button class="btn btn-default top-spacing-small" focus-me="true" ng-click="showModal()" data-toggle="modal" data-target="#myModal">Finn nøkkelen!</button>
 	</p>
-
-	<p>
-		(Spoiler: Nei, ikke denne gangen. Det er en span som lytter på et klikk-event, alas.)
-
-	</p>
-
-	<p>
-		<span class="btn btn-default top-spacing-small" ng-click="awesome()">Shortcut to cake.</span>
-	</p>
-
-	<p>
-		Uten å eksplisitt sette tabindex="0" på dette span-elementet kan ikke tastatur-brukere normalt komme seg til det i det hele tatt. Tabindex settes automatisk på elementer som input, button og a. No cake for you!
-	</p>
-
-	<button class="btn btn-default" ng-click="showNextExample()">Neste</button>
 </div>
 
-<div ng-if="keyboardTrap2">
-	<h2>Hva med noe mer irriterende?</h2>
+<div ng-if="modal">
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+					<h4 class="modal-title">Hurra!</h4>
+				</div>
+				<div class="modal-body">
+					<p>Du fant nøkkelen!</p>
+					<p><button type="button" class="btn btn-default" ng-if="!level.key" ng-click="fetchKey()">Plukk opp nøkkelen</button></p>
 
-	<p>
-		Hvis man har valgt en sorteringsmekanisme for en liste, er det vel naturlig at fokus endres tilbake til søkeresultatet, også for tastaturbrukere?
-	</p>
-	<ul id="result" tabindex="0" focus-me="true">
-		<li ng-repeat="user in level.exampleUsers | orderBy: (level.sort || '') && 'navn'">
-			{{user.navn}}
-		</li>
-	</ul>
-	
-	<div class="checkbox well">
-	    <label>
-	      <input type="checkbox" ng-keydown="shiftFocus($event)" ng-model="level.sort"> Sorter resultatet alfabetisk
-	    </label>
-	</div>
+					<p ng-if="level.key">Supert! La oss komme oss tilbake</p>
+				</div>
+				<div class="modal-footer">
 
-	<h2>Sluttvis</h2>
-	<p>
-		Måtte du tabbe baklengs i dokumentet for å komme deg hit? Ikke heeelt awesome akkurat.
-	</p>
-	<button class="btn btn-default" ng-click="showSummary()">Joa, ser poenget..</button>
-  </div>
+					<p ng-if="level.key">...</p>
+					<p ng-if="level.key">Klarer du å lukke lightboxen?</p>
+					<p ng-if="level.key"><button type="button" class="btn btn-default" data-dismiss="modal">Nei, jeg gir opp...</button></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </div>
 
 <div ng-if="summary">

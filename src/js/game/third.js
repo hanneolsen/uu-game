@@ -22,17 +22,17 @@ angular.module("uu")
 		$scope.keyboardTrap1 = true;
 	}
 
-	$scope.awesome = function() {
-		alert("Dette burde aldri skje");
+	$scope.showModal = function() {
+		console.log("hi?");
+		$scope.modal = true;
 	}
 
-	$scope.showNextExample = function() {
-		$scope.keyboardTrap1 = false;
-		$scope.keyboardTrap2 = true;
+	$scope.fetchKey = function() {
+		$scope.level.key = true;
 	}
 
 	$scope.showSummary = function() {
-		$scope.keyboardTrap2 = false;
+		$scope.keyboardTrap1 = false;
 		$scope.summary = true;	
 	}
 
